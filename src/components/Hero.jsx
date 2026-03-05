@@ -92,15 +92,15 @@ export default function Hero({ onStartSearch }) {
               className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20"
             >
               <div>
-                <div className="text-3xl font-bold text-white">10k+</div>
+                <div className="text-3xl font-bold text-white">X+</div>
                 <div className="text-sm text-white/60">Properties</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-white">5k+</div>
+                <div className="text-3xl font-bold text-white">X+</div>
                 <div className="text-sm text-white/60">Happy Clients</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-white">50+</div>
+                <div className="text-3xl font-bold text-white">X+</div>
                 <div className="text-sm text-white/60">Cities</div>
               </div>
             </motion.div>

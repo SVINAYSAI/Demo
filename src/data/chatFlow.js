@@ -28,7 +28,7 @@ export const chatMessages = {
   [chatSteps.EMAIL]: {
     text: "Thanks!\n\nWhat is the best phone number to reach you?",
     inputType: 'tel',
-    placeholder: '(555) 123-4567'
+    placeholder: 'Your phone number'
   },
   [chatSteps.PHONE]: {
     text: "Are you looking to:",
@@ -49,15 +49,15 @@ export const chatMessages = {
     getOptions: (goal) => {
       if (goal === 'rent') {
         return [
-          { label: '$1,000 - $2,000', value: { min: 1000, max: 2000 } },
-          { label: '$2,000 - $4,000', value: { min: 2000, max: 4000 } },
-          { label: '$4,000+', value: { min: 4000, max: Infinity } }
+          { label: 'Budget Range X', value: { min: 1000, max: 2000 } },
+          { label: 'Budget Range Y', value: { min: 2000, max: 4000 } },
+          { label: 'Budget Range Z', value: { min: 4000, max: Infinity } }
         ];
       }
       return [
-        { label: '$200k - $500k', value: { min: 200000, max: 500000 } },
-        { label: '$500k - $1M', value: { min: 500000, max: 1000000 } },
-        { label: '$1M+', value: { min: 1000000, max: Infinity } }
+        { label: 'Budget Range X', value: { min: 200000, max: 500000 } },
+        { label: 'Budget Range Y', value: { min: 500000, max: 1000000 } },
+        { label: 'Budget Range Z', value: { min: 1000000, max: Infinity } }
       ];
     }
   },
@@ -75,10 +75,10 @@ export const chatMessages = {
     text: "How many bedrooms do you need?",
     inputType: 'buttons',
     options: [
-      { label: '1', value: 1 },
-      { label: '2', value: 2 },
-      { label: '3', value: 3 },
-      { label: '4+', value: 4 }
+      { label: 'One Bedroom', value: 1 },
+      { label: 'Two Bedrooms', value: 2 },
+      { label: 'Three Bedrooms', value: 3 },
+      { label: 'Four or More', value: 4 }
     ]
   },
   [chatSteps.BEDROOMS]: {
@@ -98,7 +98,7 @@ export const chatMessages = {
     ]
   },
   [chatSteps.END]: {
-    text: "Thank you for using Property Finder! An agent will contact you within 24 hours.\n\nHave a great day! 👋",
+    text: "Thank you for using ChatArv! An agent will contact you within 24 hours.\n\nHave a great day! 👋",
     inputType: 'none'
   }
 };

@@ -69,7 +69,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Property Assistant</div>
+                    <div className="font-semibold text-gray-900">ChatArv</div>
                     <div className="text-sm text-green-600 flex items-center">
                       <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
                       Online
@@ -80,7 +80,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
                     <p className="text-gray-700">Hello! 👋</p>
-                    <p className="text-gray-700 mt-1">I'm your AI property assistant.</p>
+                    <p className="text-gray-700 mt-1">I'm your AI assistant ready to help.</p>
                   </div>
                   <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
                     <p className="text-gray-700">I'll help you find the perfect property in just a few steps.</p>

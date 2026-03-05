@@ -121,7 +121,7 @@ export default function ChatbotWidget({ isOpen: externalIsOpen, setIsOpen: exter
                   <Bot className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="text-white font-semibold">Property Assistant</div>
+                  <div className="text-white font-semibold">ChatArv</div>
                   <div className="flex items-center space-x-1">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                     <span className="text-xs text-white/80">Online</span>

@@ -49,10 +49,10 @@ export default function Footer() {
                 <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Building2 className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-2xl font-bold">Property Finder</span>
+                <span className="text-2xl font-bold">ChatArv</span>
               </div>
               <p className="text-gray-400 mb-8 max-w-md">
-                Your AI-powered property search assistant. Find your dream home with personalized recommendations and expert guidance.
+                Your AI-powered assistant. Find your dream home with personalized recommendations and expert guidance.
               </p>
 
               {/* Newsletter */}
@@ -183,7 +183,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Property Finder. All rights reserved.
+              © {new Date().getFullYear()} ChatArv. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
