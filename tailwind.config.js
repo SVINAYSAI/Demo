@@ -4,6 +4,10 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -48,6 +52,13 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        salon: {
+          gold: '#c87d2a',
+          'gold-light': '#f0c27f',
+          dark: '#1a1410',
+          'dark-lighter': '#2a1f15',
+          warm: '#f5ebe0',
+        },
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -58,6 +69,8 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        'gold': '0 4px 30px rgba(200, 125, 42, 0.15)',
+        'gold-lg': '0 10px 60px rgba(200, 125, 42, 0.25)',
       },
       keyframes: {
         "accordion-down": {
@@ -72,11 +85,16 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
+        "shimmer": {
+          "0%": { backgroundPosition: "100% 0" },
+          "100%": { backgroundPosition: "-100% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "shimmer": "shimmer 3s infinite",
       },
     },
   },

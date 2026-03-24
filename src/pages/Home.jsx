@@ -1,44 +1,68 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import FeaturedListings from '../components/FeaturedListings';
-import PropertyShowcase from '../components/PropertyShowcase';
-import Benefits from '../components/Benefits';
-import ChatbotWidget from '../components/ChatbotWidget';
+import Services from '../components/Services';
+import Gallery from '../components/Gallery';
+import WhyChooseUs from '../components/WhyChooseUs';
+import Team from '../components/Team';
+import Pricing from '../components/Pricing';
+import BookingModal from '../components/BookingModal';
 import Footer from '../components/Footer';
+import DemoPopup from '../components/DemoPopup';
+import { motion } from 'framer-motion';
+import { Sparkles, Star, Calendar, MessageCircle } from 'lucide-react';
+import { testimonials } from '../data/services';
 
 export default function Home() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
-  const handleStartSearch = () => {
-    setIsChatOpen(true);
+  const handleBookNow = () => {
+    setIsBookingOpen(true);
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar onStartSearch={handleStartSearch} />
-      <Hero onStartSearch={handleStartSearch} />
-      <FeaturedListings />
-      <PropertyShowcase />
-      <Benefits />
+    <div className="min-h-screen bg-white overflow-x-hidden">
+      <DemoPopup />
+      <Navbar onBookNow={handleBookNow} />
+      <Hero onBookNow={handleBookNow} />
+      <Services />
+      <Gallery />
+      <WhyChooseUs />
+      <Team />
+      <Pricing />
       
-      {/* Chatbot Introduction Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-600 to-blue-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Booking CTA Section */}
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-amber-600 via-amber-500 to-amber-700 relative overflow-hidden">
+        {/* Pattern overlay */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Ready to Find Your Dream Home?
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-white"
+            >
+              <h2
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Ready for a{' '}
+                <span className="italic">Stunning</span>{' '}
+                Transformation?
               </h2>
-              <p className="text-lg text-blue-100 mb-8">
-                Our AI-powered assistant is ready to help you discover the perfect property. 
-                Just answer a few simple questions and get personalized recommendations.
+              <p className="text-lg text-amber-50/80 mb-8 leading-relaxed">
+                Book your appointment today and let our expert stylists create 
+                the perfect look for you. Walk-ins welcome, but appointments 
+                are recommended for the best experience.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  'Personalized property matches',
-                  'Instant recommendations',
-                  'Expert guidance available'
+                  'Personalized style consultations',
+                  'Premium salon-grade products',
+                  'Satisfaction guaranteed'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
@@ -46,161 +70,179 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-blue-50">{item}</span>
+                    <span className="text-amber-50">{item}</span>
                   </li>
                 ))}
               </ul>
               <button
-                onClick={handleStartSearch}
-                className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg"
+                onClick={handleBookNow}
+                className="bg-white text-amber-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-amber-50 transition-colors shadow-xl"
               >
-                Start Your Search Now
+                Book Your Appointment
               </button>
-            </div>
+            </motion.div>
 
-            {/* Chat Preview */}
-            <div className="relative hidden lg:block">
+            {/* Booking Preview Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
               <div className="absolute inset-0 bg-white/10 rounded-3xl blur-3xl" />
-              <div className="relative bg-white rounded-2xl shadow-2xl p-6 max-w-md mx-auto">
+              <div className="relative bg-[#1a1410] rounded-3xl shadow-2xl p-8 max-w-md mx-auto border border-amber-900/30">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                    </svg>
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">ChatArv</div>
-                    <div className="text-sm text-green-600 flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                      Online
+                    <div className="font-semibold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
+                      Quick Booking
+                    </div>
+                    <div className="text-sm text-green-400 flex items-center">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
+                      Available Now
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
-                    <p className="text-gray-700">Hello! 👋</p>
-                    <p className="text-gray-700 mt-1">I'm your AI assistant ready to help.</p>
+                <div className="space-y-3">
+                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                    <p className="text-stone-400 text-sm">Choose your service</p>
+                    <p className="text-white font-medium mt-1">Hair Styling • ₹45</p>
                   </div>
-                  <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
-                    <p className="text-gray-700">I'll help you find the perfect property in just a few steps.</p>
-                  </div>
-                  <div className="flex justify-end">
-                    <div className="bg-blue-600 text-white rounded-2xl rounded-tr-none px-4 py-2">
-                      Let's get started!
-                    </div>
+                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                    <p className="text-stone-400 text-sm">Select date & time</p>
+                    <p className="text-white font-medium mt-1">Today • 3:00 PM</p>
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-center space-x-3">
-                  <div className="flex-1 bg-gray-100 rounded-full px-4 py-3 text-gray-400 text-sm">
-                    Type a message...
-                  </div>
-                  <button className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                    </svg>
-                  </button>
-                </div>
+                <button
+                  onClick={handleBookNow}
+                  className="w-full mt-6 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white py-3.5 rounded-full font-semibold transition-all"
+                >
+                  Book This Slot
+                </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 lg:py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Testimonials
+      <section className="py-24 lg:py-32 bg-salon-warm relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-flex items-center space-x-2 bg-amber-100 text-amber-700 px-5 py-2.5 rounded-full text-sm font-semibold mb-6">
+              <MessageCircle className="w-4 h-4" />
+              <span>Testimonials</span>
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              What Our Clients Say
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1410] mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              What Our <span className="text-gradient-gold italic">Clients</span> Say
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Hear from people who found their dream homes using our AI-powered platform.
+            <p className="text-lg text-stone-500 max-w-2xl mx-auto">
+              Don't just take our word for it. Hear from people who love their experience at ChowdhuryX Corporation.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Sarah Johnson',
-                role: 'First-time Buyer',
-                image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
-                quote: 'The AI assistant made finding my first home so easy. It understood exactly what I was looking for!'
-              },
-              {
-                name: 'Michael Chen',
-                role: 'Property Investor',
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
-                quote: 'I\'ve used many property platforms, but this one\'s AI recommendations are incredibly accurate.'
-              },
-              {
-                name: 'Emily Rodriguez',
-                role: 'Relocating Family',
-                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80',
-                quote: 'Moving to a new city was stressful, but the chatbot helped us find the perfect neighborhood.'
-              }
-            ].map((testimonial, index) => (
-              <div
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                whileHover={{ y: -8 }}
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-stone-100"
               >
+                {/* Stars */}
                 <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.quote}"</p>
+                
+                {/* Quote */}
+                <p className="text-stone-600 mb-6 leading-relaxed italic">"{testimonial.quote}"</p>
+                
+                {/* Author */}
                 <div className="flex items-center space-x-4">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover ring-2 ring-amber-200"
                   />
                   <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-500">{testimonial.role}</div>
+                    <div className="font-bold text-[#1a1410]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-amber-600">{testimonial.role}</div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-slate-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Start Your Property Search Today
-          </h2>
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who found their perfect home with our AI-powered platform.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button
-              onClick={handleStartSearch}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
+      {/* Final CTA Section */}
+      <section className="py-24 lg:py-32 bg-[#1a1410] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-3xl" />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <Sparkles className="w-8 h-8 text-amber-500 mx-auto mb-6" />
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6"
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Chat with AI Assistant
-            </button>
-            <a
-              href="#listings"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-full font-semibold text-lg transition-colors"
-            >
-              Browse All Listings
-            </a>
-          </div>
+              Begin Your{' '}
+              <span className="text-gradient-gold italic">Beauty</span>{' '}
+              Journey Today
+            </h2>
+            <p className="text-lg text-stone-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+              Join our satisfied clients who trust ChowdhuryX Corporation for 
+              their beauty and grooming needs. Your transformation awaits.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button
+                onClick={handleBookNow}
+                className="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-2xl shadow-amber-500/20 hover:shadow-amber-500/30"
+              >
+                Book Your Appointment
+              </button>
+              <a
+                href="#services"
+                className="bg-transparent border-2 border-white/20 text-white hover:bg-white hover:text-[#1a1410] px-10 py-4 rounded-full font-bold text-lg transition-all"
+              >
+                Explore Services
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       <Footer />
-      <ChatbotWidget isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
+      <BookingModal isOpen={isBookingOpen} setIsOpen={setIsBookingOpen} />
     </div>
   );
 }
