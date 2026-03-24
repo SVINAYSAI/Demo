@@ -37,13 +37,8 @@ export default function Hero({ onBookNow }) {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="inline-flex items-center space-x-2 bg-amber-500/15 backdrop-blur-sm rounded-full px-5 py-2.5 mb-8 border border-amber-500/20"
             >
-<<<<<<< HEAD
               <Sparkles className="w-4 h-4 text-amber-400" />
               <span className="text-sm font-medium text-amber-300">ChowdhuryX Corporation — Demo</span>
-=======
-              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-white/90">ChowdhuryX Corporation — Demo</span>
->>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
             </motion.div>
 
             <motion.h1
@@ -57,14 +52,10 @@ export default function Hero({ onBookNow }) {
               <span className="text-gradient-gold italic">
                 Beauty
               </span>{' '}
-<<<<<<< HEAD
               Meets{' '}
               <span className="text-gradient-gold italic">
                 Elegance
               </span>
-=======
-              with Us
->>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
             </motion.h1>
 
             <motion.p
@@ -73,13 +64,8 @@ export default function Hero({ onBookNow }) {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="text-lg sm:text-xl text-white/60 mb-10 max-w-xl leading-relaxed"
             >
-<<<<<<< HEAD
               Experience world-class salon and grooming services 
               in a luxurious atmosphere. A demo by ChowdhuryX Corporation.
-=======
-              Explore premium properties and find your dream home.
-              This is a demo website by ChowdhuryX Corporation.
->>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
             </motion.p>
 
             <motion.div
