@@ -55,10 +55,17 @@ export default function Footer() {
                   <span className="text-2xl font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>ChowdhuryX</span>
                   <span className="block text-[10px] uppercase tracking-[0.2em] text-amber-500/80 -mt-1">Corporation</span>
                 </div>
+<<<<<<< HEAD
               </div>
               <p className="text-stone-400 mb-8 max-w-md leading-relaxed">
                 A demo salon and spa platform by ChowdhuryX Corporation. 
                 Where every visit is a transformative experience.
+=======
+                <span className="text-2xl font-bold">ChowdhuryX Corporation</span>
+              </div>
+              <p className="text-gray-400 mb-8 max-w-md">
+                A demo real estate platform by ChowdhuryX Corporation. Experience premium property listings and intelligent search.
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
               </p>
 
               {/* Newsletter */}
@@ -172,6 +179,7 @@ export default function Footer() {
           className="flex flex-wrap justify-center gap-6 lg:gap-10 py-8 border-t border-white/5 text-stone-400 text-sm"
         >
           <div className="flex items-center space-x-2">
+<<<<<<< HEAD
             <Mail className="w-4 h-4 text-amber-500" />
             <span>rave.i@chowdhuryx.com</span>
           </div>
@@ -186,6 +194,18 @@ export default function Footer() {
           <div className="flex items-center space-x-2">
             <Clock className="w-4 h-4 text-amber-500" />
             <span>Mon-Sat: 9 AM - 9 PM</span>
+=======
+            <Mail className="w-4 h-4" />
+            <span>rave.i@chowdhuryx.com</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Phone className="w-4 h-4" />
+            <span>+XX XXXXX XXXXX</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <MapPin className="w-4 h-4" />
+            <span>Demo Location, ChowdhuryX Corporation</span>
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
           </div>
         </motion.div>
       </div>
@@ -194,10 +214,15 @@ export default function Footer() {
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+<<<<<<< HEAD
             <p className="text-stone-500 text-sm flex items-center">
               © {new Date().getFullYear()} ChowdhuryX Corporation. Made with{' '}
               <Heart className="w-3.5 h-3.5 text-amber-500 mx-1.5 fill-amber-500" />
               All rights reserved.
+=======
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} ChowdhuryX Corporation. All rights reserved.
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-stone-500 hover:text-amber-400 transition-colors">

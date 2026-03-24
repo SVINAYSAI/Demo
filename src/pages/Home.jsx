@@ -9,9 +9,12 @@ import Pricing from '../components/Pricing';
 import BookingModal from '../components/BookingModal';
 import Footer from '../components/Footer';
 import DemoPopup from '../components/DemoPopup';
+<<<<<<< HEAD
 import { motion } from 'framer-motion';
 import { Sparkles, Star, Calendar, MessageCircle } from 'lucide-react';
 import { testimonials } from '../data/services';
+=======
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -21,6 +24,7 @@ export default function Home() {
   };
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen bg-white overflow-x-hidden">
       <DemoPopup />
       <Navbar onBookNow={handleBookNow} />
@@ -30,6 +34,15 @@ export default function Home() {
       <WhyChooseUs />
       <Team />
       <Pricing />
+=======
+    <div className="min-h-screen bg-white">
+      <DemoPopup />
+      <Navbar onStartSearch={handleStartSearch} />
+      <Hero onStartSearch={handleStartSearch} />
+      <FeaturedListings />
+      <PropertyShowcase />
+      <Benefits />
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
       
       {/* Booking CTA Section */}
       <section className="py-24 lg:py-32 bg-gradient-to-br from-amber-600 via-amber-500 to-amber-700 relative overflow-hidden">
@@ -53,10 +66,16 @@ export default function Home() {
                 <span className="italic">Stunning</span>{' '}
                 Transformation?
               </h2>
+<<<<<<< HEAD
               <p className="text-lg text-amber-50/80 mb-8 leading-relaxed">
                 Book your appointment today and let our expert stylists create 
                 the perfect look for you. Walk-ins welcome, but appointments 
                 are recommended for the best experience.
+=======
+              <p className="text-lg text-blue-100 mb-8">
+                Our AI-powered assistant is ready to help you discover the perfect property. 
+                This is a demo by ChowdhuryX Corporation.
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
               </p>
               <ul className="space-y-4 mb-8">
                 {[
@@ -97,20 +116,34 @@ export default function Home() {
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
                   <div>
+<<<<<<< HEAD
                     <div className="font-semibold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
                       Quick Booking
                     </div>
                     <div className="text-sm text-green-400 flex items-center">
                       <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
                       Available Now
+=======
+                    <div className="font-semibold text-gray-900">ChowdhuryX</div>
+                    <div className="text-sm text-green-600 flex items-center">
+                      <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+                      Online
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
                     </div>
                   </div>
                 </div>
 
+<<<<<<< HEAD
                 <div className="space-y-3">
                   <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                     <p className="text-stone-400 text-sm">Choose your service</p>
                     <p className="text-white font-medium mt-1">Hair Styling • ₹45</p>
+=======
+                <div className="space-y-4">
+                  <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
+                    <p className="text-gray-700">Hello! 👋</p>
+                    <p className="text-gray-700 mt-1">I'm your ChowdhuryX demo assistant.</p>
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
                   </div>
                   <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                     <p className="text-stone-400 text-sm">Select date & time</p>
@@ -152,14 +185,44 @@ export default function Home() {
             >
               What Our <span className="text-gradient-gold italic">Clients</span> Say
             </h2>
+<<<<<<< HEAD
             <p className="text-lg text-stone-500 max-w-2xl mx-auto">
               Don't just take our word for it. Hear from people who love their experience at ChowdhuryX Corporation.
+=======
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Hear from people who found their dream homes using our platform.
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
             </p>
           </motion.div>
 
+<<<<<<< HEAD
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
+=======
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Client A.',
+                role: 'First-time Buyer',
+                image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
+                quote: 'The platform made finding my first home so easy. Highly recommended!'
+              },
+              {
+                name: 'Client B.',
+                role: 'Property Investor',
+                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
+                quote: 'Excellent property recommendations and seamless experience.'
+              },
+              {
+                name: 'Client C.',
+                role: 'Relocating Family',
+                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80',
+                quote: 'Moving to a new city was stressful, but this platform helped us find the perfect neighborhood.'
+              }
+            ].map((testimonial, index) => (
+              <div
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -198,6 +261,7 @@ export default function Home() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Final CTA Section */}
       <section className="py-24 lg:py-32 bg-[#1a1410] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent" />
@@ -214,6 +278,21 @@ export default function Home() {
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
+=======
+      {/* CTA Section */}
+      <section className="py-20 lg:py-32 bg-slate-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            Start Your Property Search Today
+          </h2>
+          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            Join our satisfied customers who found their perfect home with ChowdhuryX Corporation.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              onClick={handleStartSearch}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
+>>>>>>> fd271af8fc235e6dfbeeb1f5a410ac9bb273362d
             >
               Begin Your{' '}
               <span className="text-gradient-gold italic">Beauty</span>{' '}
