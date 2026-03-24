@@ -49,10 +49,10 @@ export default function Footer() {
                 <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Building2 className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-2xl font-bold">ChatArv</span>
+                <span className="text-2xl font-bold">ChowdhuryX Corporation</span>
               </div>
               <p className="text-gray-400 mb-8 max-w-md">
-                Your AI-powered assistant. Find your dream home with personalized recommendations and expert guidance.
+                A demo real estate platform by ChowdhuryX Corporation. Experience premium property listings and intelligent search.
               </p>
 
               {/* Newsletter */}
@@ -165,15 +165,15 @@ export default function Footer() {
         >
           <div className="flex items-center space-x-2">
             <Mail className="w-4 h-4" />
-            <span>contact@propertyfinder.com</span>
+            <span>rave.i@chowdhuryx.com</span>
           </div>
           <div className="flex items-center space-x-2">
             <Phone className="w-4 h-4" />
-            <span>+1 (555) 123-4567</span>
+            <span>+XX XXXXX XXXXX</span>
           </div>
           <div className="flex items-center space-x-2">
             <MapPin className="w-4 h-4" />
-            <span>123 Property Lane, New York, NY 10001</span>
+            <span>Demo Location, ChowdhuryX Corporation</span>
           </div>
         </motion.div>
       </div>
@@ -183,7 +183,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} ChatArv. All rights reserved.
+              © {new Date().getFullYear()} ChowdhuryX Corporation. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

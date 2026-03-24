@@ -33,7 +33,7 @@ export default function Hero({ onStartSearch }) {
               className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6"
             >
               <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-white/90">AI-Powered Property Search</span>
+              <span className="text-sm font-medium text-white/90">ChowdhuryX Corporation — Demo</span>
             </motion.div>
 
             <motion.h1
@@ -46,7 +46,7 @@ export default function Hero({ onStartSearch }) {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                 Property
               </span>{' '}
-              with AI
+              with Us
             </motion.h1>
 
             <motion.p
@@ -55,8 +55,8 @@ export default function Hero({ onStartSearch }) {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="text-lg sm:text-xl text-white/80 mb-8 max-w-xl"
             >
-              Search homes, apartments, and rentals using an intelligent property assistant. 
-              Get personalized recommendations in minutes.
+              Explore premium properties and find your dream home.
+              This is a demo website by ChowdhuryX Corporation.
             </motion.p>
 
             <motion.div

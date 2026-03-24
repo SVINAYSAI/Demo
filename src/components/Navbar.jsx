@@ -50,7 +50,7 @@ export default function Navbar({ onStartSearch }) {
             <span className={`text-xl font-bold ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}>
-              ChatArv
+              ChowdhuryX
             </span>
           </motion.a>
 

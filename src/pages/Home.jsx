@@ -6,6 +6,7 @@ import PropertyShowcase from '../components/PropertyShowcase';
 import Benefits from '../components/Benefits';
 import ChatbotWidget from '../components/ChatbotWidget';
 import Footer from '../components/Footer';
+import DemoPopup from '../components/DemoPopup';
 
 export default function Home() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -16,6 +17,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <DemoPopup />
       <Navbar onStartSearch={handleStartSearch} />
       <Hero onStartSearch={handleStartSearch} />
       <FeaturedListings />
@@ -32,7 +34,7 @@ export default function Home() {
               </h2>
               <p className="text-lg text-blue-100 mb-8">
                 Our AI-powered assistant is ready to help you discover the perfect property. 
-                Just answer a few simple questions and get personalized recommendations.
+                This is a demo by ChowdhuryX Corporation.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
@@ -69,7 +71,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">ChatArv</div>
+                    <div className="font-semibold text-gray-900">ChowdhuryX</div>
                     <div className="text-sm text-green-600 flex items-center">
                       <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
                       Online
@@ -80,7 +82,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
                     <p className="text-gray-700">Hello! 👋</p>
-                    <p className="text-gray-700 mt-1">I'm your AI assistant ready to help.</p>
+                    <p className="text-gray-700 mt-1">I'm your ChowdhuryX demo assistant.</p>
                   </div>
                   <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
                     <p className="text-gray-700">I'll help you find the perfect property in just a few steps.</p>
@@ -119,29 +121,29 @@ export default function Home() {
               What Our Clients Say
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Hear from people who found their dream homes using our AI-powered platform.
+              Hear from people who found their dream homes using our platform.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Sarah Johnson',
+                name: 'Client A.',
                 role: 'First-time Buyer',
                 image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
-                quote: 'The AI assistant made finding my first home so easy. It understood exactly what I was looking for!'
+                quote: 'The platform made finding my first home so easy. Highly recommended!'
               },
               {
-                name: 'Michael Chen',
+                name: 'Client B.',
                 role: 'Property Investor',
                 image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
-                quote: 'I\'ve used many property platforms, but this one\'s AI recommendations are incredibly accurate.'
+                quote: 'Excellent property recommendations and seamless experience.'
               },
               {
-                name: 'Emily Rodriguez',
+                name: 'Client C.',
                 role: 'Relocating Family',
                 image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80',
-                quote: 'Moving to a new city was stressful, but the chatbot helped us find the perfect neighborhood.'
+                quote: 'Moving to a new city was stressful, but this platform helped us find the perfect neighborhood.'
               }
             ].map((testimonial, index) => (
               <div
@@ -180,7 +182,7 @@ export default function Home() {
             Start Your Property Search Today
           </h2>
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who found their perfect home with our AI-powered platform.
+            Join our satisfied customers who found their perfect home with ChowdhuryX Corporation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button

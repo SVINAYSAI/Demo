@@ -98,7 +98,7 @@ export const chatMessages = {
     ]
   },
   [chatSteps.END]: {
-    text: "Thank you for using ChatArv! An agent will contact you within 24 hours.\n\nHave a great day! 👋",
+    text: "Thank you for using ChowdhuryX! An agent will contact you within 24 hours.\n\nHave a great day! 👋",
     inputType: 'none'
   }
 };
